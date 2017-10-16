@@ -1,7 +1,7 @@
 {
 	"name": "pi",
 	"private": true,
-	"version": "1.0.0-28",
+	"version": "1.0.0-29",
 	"scripts": {
 		"build": "rollup -c",
 		"prod": "cross-env NODE_ENV=production npm run build",

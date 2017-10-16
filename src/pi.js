@@ -74,6 +74,8 @@
 				(In beta but dev. very active !)
 */
 
+import { version } from '../package.json'
+
 ;(function load() {
 	var isPlugRoom = /(http(?:s)?:\/\/(?:[a-z]+\.)*plug\.dj\/)(?!about$|ba$|forgot-password$|founders$|giftsub\/\d|jobs$|legal$|merch$|partners$|plot$|privacy$|purchase$|subscribe$|team$|terms$|press$|_\/|@\/|!\/)(.+)/i;
 	if (isPlugRoom.test(location.href)) {
@@ -383,12 +385,21 @@
 				return socket;
 			}
 
+			let _v = version;
+			let pre = null;
+
+			if (version.indexOf('-')) {
+				[_v, pre] = version.split('-');
+			}
+
+			const [major, minor, patch] = _v.split('.')
+
 			window.pi = {
 				version: {
-					major: 1,
-					minor: 0,
-					patch: 0,
-					pre: 28
+					major,
+					minor,
+					patch,
+					pre
 				},
 				_event: {
 					advance: function(song) {
@@ -2140,7 +2151,7 @@
 							// Add another onbeforeunload event listener to the page since plug handles it too and popout.close
 							// doesn't work for some reason..
 							meldBefore(popout, 'onbeforeunload', () => {
-								delete popout;
+								popout = null;
 							});
 						}, 2000);
 					},
@@ -2858,7 +2869,7 @@
 					modules.context._events['chat:delete'][0].callback = modules.originalChatDelete;
 					modules.context.off('change:streamDisabled', pi._modulesEvent.streamDisabled);
 					// modules.context._events['chat:delete'].push(modules.events.chatDelete);
-					delete modules;
+					modules = null;
 
 					// Allow to reload
 					window.scriptURL = url.script;
@@ -2867,9 +2878,9 @@
 					clearInterval(friendsOnline);
 					clearInterval(checkIfRoomChanged);
 
-					delete friendsOnline;
-					delete roomURL;
-					delete checkIfRoomChanged;
+					friendsOnline = null;
+					roomURL = null;
+					checkIfRoomChanged = null;
 
 					// Unbind events BEFORE removing elements
 					$(window).off('keydown', pi._DOMEvent.keydown);
@@ -2903,7 +2914,7 @@
 
 					pi._extendAPI.kill();
 
-					delete pi;
+					pi = null;
 				},
 				_extendAPI: {
 					init: function() {

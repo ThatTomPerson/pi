@@ -3,11 +3,17 @@
 	"private": true,
 	"version": "1.0.0-28",
 	"scripts": {
-		"build": "rollup -c"
+		"build": "rollup -c",
+		"prod": "cross-env NODE_ENV=production npm run build",
+		"version": "npm run build && git add -A js/",
+		"postversion": "git push && git push --tags && rm -rf js/"
 	},
 	"dependencies": {},
 	"devDependencies": {
+		"cross-env": "^5.0.5",
 		"rollup": "^0.50.0",
-		"rollup-plugin-json": "^2.3.0"
+		"rollup-plugin-buble": "^0.16.0",
+		"rollup-plugin-json": "^2.3.0",
+		"rollup-plugin-uglify": "^2.0.1"
 	}
 }

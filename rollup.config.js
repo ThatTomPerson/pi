@@ -5,7 +5,6 @@ import buble from 'rollup-plugin-buble';
 export default {
 	input: 'src/pi.js',
 	output: {
-		name: 'pi',
 		file: 'js/pi.js',
 		format: 'iife',
 		strict: false

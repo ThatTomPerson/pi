@@ -4,9 +4,10 @@
 	"version": "1.0.0-29",
 	"scripts": {
 		"build": "rollup -c",
-		"prod": "cross-env NODE_ENV=production npm run build",
+		"watch": "npm run build -- -w",
+		"prod": "cross-env NODE_ENV=production npm run build -- -m",
 		"version": "npm run build && git add -A js/",
-		"postversion": "git push && git push --tags && rm -rf js/"
+		"postversion": "git push && git push --tags"
 	},
 	"dependencies": {},
 	"devDependencies": {

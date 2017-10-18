@@ -74,12 +74,30 @@
 				(In beta but dev. very active !)
 */
 
-import { version } from '../package.json'
+import { version as _version } from '../package.json'
+let _v = _version
+let pre = null;
+if (_v.indexOf('-')) {
+	[_v, pre] = _v.split('-');
+}
 
-;(function load() {
+const [major, minor, patch] = _v.split('.')
+
+const version = {
+	major,
+	minor,
+	patch,
+	pre
+}
+
+const branch = pre ? 'pre-release' : 'master';
+
+const root = `https://rawgit.com/Plug-It/pi/${branch}`;
+
+(function load() {
 	var isPlugRoom = /(http(?:s)?:\/\/(?:[a-z]+\.)*plug\.dj\/)(?!about$|ba$|forgot-password$|founders$|giftsub\/\d|jobs$|legal$|merch$|partners$|plot$|privacy$|purchase$|subscribe$|team$|terms$|press$|_\/|@\/|!\/)(.+)/i;
 	if (isPlugRoom.test(location.href)) {
-		if (typeof pi !== 'undefined') pi._reload();
+		if (typeof window.pi !== 'undefined') window.pi._reload();
 		else if (plugReady()) {
 			// Status (can be used to debug)
 			$('.app-header').after($(
@@ -136,7 +154,7 @@ import { version } from '../package.json'
 			}
 			$.ajax({
 				dataType: 'json',
-				url: 'https://rawgit.com/Plug-It/pi/pre-release/lang/'+lang+'.json',
+				url: `${root}/lang/${lang}.json`,
 				success: function(data) {
 					lang = data;
 				},
@@ -385,22 +403,8 @@ import { version } from '../package.json'
 				return socket;
 			}
 
-			let _v = version;
-			let pre = null;
-
-			if (version.indexOf('-')) {
-				[_v, pre] = version.split('-');
-			}
-
-			const [major, minor, patch] = _v.split('.')
-
 			window.pi = {
-				version: {
-					major,
-					minor,
-					patch,
-					pre
-				},
+				version,
 				_event: {
 					advance: function(song) {
 						/* contains = {
@@ -1452,11 +1456,11 @@ import { version } from '../package.json'
 							break;
 
 							case 'reload':
-								pi._reload();
+								window.pi._reload();
 							break;
 
 							case 'kill':
-								pi._close();
+								window.pi._close();
 							break;
 
 							default:

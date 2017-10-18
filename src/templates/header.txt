@@ -1,0 +1,75 @@
+/*
+	Plug-It - Heavily customise your Plug.dj experience.
+
+	Developed by: WiBla <contact.wibla@gmail.com>
+	Copyright (c) 2014-2017 WiBla.
+
+	Liscenced under the GPL liscence:
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+	Special thanks to:
+		- All the alpha & beta testers !
+		- Hideki for creating such an amazing community and helping me at the very beginning.
+		- Zurbo, So much to say.. Thank you for supporting and helping me everyday.
+		- Sinful for being so kind and teaching me how to use CSS attribute selectors.
+		- TheDark1337 for always answering my silly questions about javascript and his script.
+		- Dano-em for making me love jQuery.
+		- The creators & maintainers of this repository: https://github.com/plugcommunity/documentation
+		  for putting together such an amazing source of documentation.
+
+	Library Used:
+		Plug's Front-End API
+		  -> http://support.plug.dj/hc/en-us/sections/200353347-Front-End-API
+		jQuery
+		  -> https://jquery.com
+		RequireJS
+		  -> http://requirejs.org
+		ExtPlug Socket Intercept
+			-> https://github.com/extplug/ExtPlug/blob/master/src/plugins/SocketEventsPlugin.js
+
+	Inspired by:
+		plug³ https://plugcubed.net/
+			- Clear chat and toggle stream button
+			- AFK autorespond
+			- Room settings
+			- Third party emotes
+		Radiant Community Script https://rcs.radiant.dj/
+			- Loading status box
+			- Custom background
+			- Prevent Accidental Navigation
+			- Alternative visualizers
+			- Chat limit
+			- Inline user info
+			- Show deleted chat
+			- /fire /love /shrug commands
+		Origem Woot (No longer available)
+			- Vote list
+			- Booth alert
+			- /Whois & /Whoami commands
+		DerpgonCz's unavailable song search
+			Link: https://github.com/DerpgonCz/plug.dj-scripts/blob/master/scripts/unavailable-songs.js
+		plugmixer https://github.com/Sunxperous/plugmixer
+			- Playlist mixing
+		TastyPlug https://tastyplug.tastycat.org/
+			- Menu UI & UX
+			- Hide video
+
+		I also recommend these scripts as an alternative:
+			- plug_p0ne https://p0ne.com/plug_p0ne/
+				Very powerfull and full of goodness !
+			- ExtPlug https://extplug.github.io/
+				Install plugins with a simple link or make one yourself !
+				(In beta but dev. very active !)
+*/

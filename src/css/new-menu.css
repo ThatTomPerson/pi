@@ -1,0 +1,140 @@
+/* Custom stuff that I am not sure of yet */
+.bdg.bdg-mod-g {
+	background: url(https://i.imgur.com/HXYkFrn.png) 0 / 30px;
+}
+.bdg.bdg-promoter-g {
+	background: url(https://i.imgur.com/1R688RG.png) 0 / 30px;
+}
+.bdg.bdg-pi-dev {
+	background: url(https://i.imgur.com/f6vx6nX.png) 0 / 30px;
+}
+.bdg.bdg-pi-ambassador {
+	background: url(https://i.imgur.com/jE1FWXL.png) 0 / 30px;
+}
+.bdg.bdg-pi-vip {
+	background: url(https://i.imgur.com/pOkaIXE.png) 0 / 30px;
+}
+.bdg.bdg-pi-translator {
+	background: url(https://i.imgur.com/rCWvYJL.png) 0 / 30px;
+}
+.label.role-admin      {color: #42A5DC;}
+.label.role-ambassador {color: #89BE6C;}
+.label.role-sitemod    {color: #E74C3C;}
+.label.role-plot       {color: #E67E22;}
+.label.role-promoter   {color: #1ABC9C;}
+.label.role-pi-developer  {color: #3498DB;}
+.label.role-pi-ambassador {color: #E67E22;}
+.label.role-pi-vip        {color: #E91E63;}
+.label.role-pi-translator {color: #A8D44E;}
+.label.role-pi-donator    {color: #D8B605;}
+.label.role-pi-alpha      {color: #00A651;}
+
+
+
+/* Menu Icon */
+#pi-logo, #icon {
+	position: absolute;
+	right: 345px; top: 0;
+	width: 54px; height: 54px;
+	z-index: 20;
+	cursor: pointer;
+	box-shadow: inset 0 -2px 0 -1px #0a0a0a;
+	background:	url(https://raw.githubusercontent.com/Plug-It/pi/pre-release/img/other/icon-54.png) no-repeat;
+	transition: all ease-in-out .3s;
+}
+#icon {
+	top: 0px; left: 0;
+	background:
+		url(https://raw.githubusercontent.com/Plug-It/pi/pre-release/img/other/icon-54-hover.png) no-repeat,
+		radial-gradient(circle at top left, hsla(0,0%,100%,.5), transparent),
+		linear-gradient(135deg, hsl(190,70%,50%), hsl(220,70%,50%));
+	box-shadow:
+		inset 0 -2px 0 -1px #0a0a0a,
+		inset 0 0 5px hsla(0,0%,100%,.5);
+}
+/* Transition from #pi-logo to #icon */
+#icon {opacity: 0;}
+#icon:hover {opacity: 1;}
+/* Logo's placement */
+#history-button {
+	right: 54px !important;
+}
+#now-playing-time, #volume, #button {
+	right: calc(+115px) !important;
+}
+
+/* Menu itself */
+#pi-menu {
+	background: #111317;
+	z-index: 601;
+}
+#pi-menu #pi-left-panel {
+	position: absolute;
+	top: 0; left: 0;
+	width: 220px; height: 100%;
+
+	background: #1C1F25;
+}
+#pi-menu #pi-left-panel .title {
+	position: relative;
+	margin: 10px;
+	margin-bottom: 15px;
+	width: 200px;
+
+	color: #808691;
+	font-size: 28px;
+}
+#pi-menu #pi-left-panel .item {
+	position: relative;
+	width: 100%; height: 46px;
+
+	color: #808691;
+	cursor: pointer;
+}
+#pi-menu #pi-left-panel .item i {
+	top: 8px; left: 4px;
+}
+#pi-menu #pi-left-panel .item i[class*="icon-chat-"] {
+	top: 15px; left: 12px;
+}
+#pi-menu #pi-left-panel .item .label {
+	position: absolute;
+	top: 12px; left: 40px;
+
+	font-size: 16px;
+}
+#pi-menu #pi-left-panel .item i {
+	filter: brightness(.5) saturate(.3);
+}
+#pi-menu #pi-left-panel .item .label[class*='role-'] {
+	filter: brightness(.7) saturate(.5);
+}
+#pi-menu #pi-left-panel .item.selected i,
+#pi-menu #pi-left-panel .item:hover i,
+#pi-menu #pi-left-panel .item.selected .label,
+#pi-menu #pi-left-panel .item:hover .label {
+	filter: brightness(1) saturate(1);
+}
+#pi-menu #pi-left-panel .item:hover {
+	background: #21242c;
+}
+#pi-menu #pi-left-panel .item.selected {
+	background: #21242c;
+	cursor: default;
+}
+#pi-menu #pi-left-panel .item.selected:hover {
+	background: #252931;
+}
+#pi-menu #pi-left-panel .item:hover,
+#pi-menu #pi-left-panel .item.selected {
+	color: #fff;
+}
+#pi-menu #pi-left-panel ~ div {
+	display: none;
+	position: absolute;
+	top: 0; left: 220px;
+	width: calc(100% - 220px); height: 100%;
+}
+#pi-menu #pi-left-panel ~ div.selected {
+	display: block;
+}

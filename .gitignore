@@ -1,3 +1,14 @@
-*.jshintrc
+# NPM
+/node_modules
+npm-debug.log
+
+# Dev
+/src/dev
+/idea
 *.idea
 *.xcf
+
+# OS
+desktop.ini
+thumbs.db
+.DS_Store

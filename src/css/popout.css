@@ -1,0 +1,9 @@
+@import url('https://dl.dropboxusercontent.com/s/0pkgtuke6w766qi/menu.css');
+
+#chat-input {
+  left: 5px;
+  width: calc(100% - 10px);
+}
+#now-playing-time, #volume, #button {
+	right: 10px !important;
+}

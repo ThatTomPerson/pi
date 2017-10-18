@@ -1,5 +1,6 @@
 import LoadBox from './LoadingBox.js';
 import ModuleLoader from './ModuleLoader.js';
+import extendApi from './extend-api'
 import init from './init.js';
 
 function initWhenLoaded(Lang, Ranks, Modules, loadBox) {
@@ -44,4 +45,7 @@ export default function() {
 
 	loadBox.update('Loading modules');
 	const Modules = ModuleLoader();
+
+	loadBox.update('Adding global roles');
+	ExtendAPI.init();
 }

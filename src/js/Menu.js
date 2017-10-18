@@ -1,5 +1,4 @@
 import getPIRanks from './utils/getPIRanks.js';
-import ROLE from './roles'
 
 export default class Menu {
 	constructor(Modules, Lang) {
@@ -20,17 +19,17 @@ export default class Menu {
 					${require('../templates/menu-item/general.html')}
 					${require('../templates/menu-item/customisation.html')}
 					${require('../templates/menu-item/notifications.html')}
-					${(this.debug || currentUser.role > API.ROLE.DJ || currentUser.gRole > ROLE.PLOT ?
+					${(this.debug || currentUser.role > API.ROLE.DJ || currentUser.gRole > API.GOLBAL_ROLE.PLOT ?
 						require('../templates/menu-item/moderation.html') : '')}
-					${(this.debug || currentUser.gRole === ROLE.ADMIN ?
+					${(this.debug || currentUser.gRole === API.GOLBAL_ROLE.ADMIN ?
 						require('../templates/menu-item/admin.html') : '')}
-					${(this.debug || currentUser.gRole === ROLE.AMBASSADOR ?
+					${(this.debug || currentUser.gRole === API.GOLBAL_ROLE.AMBASSADOR ?
 						require('../templates/menu-item/ambassador.html') : '')}
-					${(this.debug || currentUser.gRole === ROLE.MODERATOR ?
+					${(this.debug || currentUser.gRole === API.GOLBAL_ROLE.MODERATOR ?
 						require('../templates/menu-item/moderator.html') : '')}
-					${(this.debug || currentUser.gRole === ROLE.PLOT ?
+					${(this.debug || currentUser.gRole === API.GOLBAL_ROLE.PLOT ?
 						require('../templates/menu-item/plot.html') : '')}
-					${(this.debug || currentUser.gRole === ROLE.PROMOTER ?
+					${(this.debug || currentUser.gRole === API.GOLBAL_ROLE.PROMOTER ?
 						require('../templates/menu-item/promoter.html') : '')}
 					${(this.debug || getPIRanks(currentUser.id).indexOf('Developer') !== -1 ?
 						require('../templates/menu-item/pi-developer.html') : '')}
@@ -51,17 +50,17 @@ export default class Menu {
 				${require('../templates/menu-panels/general.html')}
 				${require('../templates/menu-panels/customisation.html')}
 				${require('../templates/menu-panels/notifications.html')}
-				${(this.debug || currentUser.role > API.ROLE.DJ || currentUser.gRole > ROLE.PLOT ?
+				${(this.debug || currentUser.role > API.ROLE.DJ || currentUser.gRole > API.GOLBAL_ROLE.PLOT ?
 					require('../templates/menu-panels/moderation.html') : '')}
-				${(this.debug || currentUser.gRole === ROLE.ADMIN ?
+				${(this.debug || currentUser.gRole === API.GOLBAL_ROLE.ADMIN ?
 					require('../templates/menu-panels/admin.html') : '')}
-				${(this.debug || currentUser.gRole === ROLE.AMBASSADOR ?
+				${(this.debug || currentUser.gRole === API.GOLBAL_ROLE.AMBASSADOR ?
 					require('../templates/menu-panels/ambassador.html') : '')}
-				${(this.debug || currentUser.gRole === ROLE.MODERATOR ?
+				${(this.debug || currentUser.gRole === API.GOLBAL_ROLE.MODERATOR ?
 					require('../templates/menu-panels/moderator.html') : '')}
-				${(this.debug || currentUser.gRole === ROLE.PLOT ?
+				${(this.debug || currentUser.gRole === API.GOLBAL_ROLE.PLOT ?
 					require('../templates/menu-panels/plot.html') : '')}
-				${(this.debug || currentUser.gRole === ROLE.PROMOTER ?
+				${(this.debug || currentUser.gRole === API.GOLBAL_ROLE.PROMOTER ?
 					require('../templates/menu-panels/promoter.html') : '')}
 				${(this.debug || getPIRanks(currentUser.id).indexOf('Developer') !== -1 ?
 					require('../templates/menu-panels/pi-developer.html') : '')}

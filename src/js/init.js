@@ -1,14 +1,13 @@
 import Version from './Version.js';
 import Settings from './Settings.js';
 import Menu from './Menu.js';
-import ROLE from './roles'
 import getPIRanks from './utils/getPIRanks.js';
 import vote from './utils/vote.js';
 
 export default function init(Lang, Ranks, Modules, loadBox) {
 	loadBox.update('Creating Script Environement');
 	const START_TIME = new Date().getTime();
-	const DELAY = (API.getUser().gRole >= ROLE.AMBASSADOR ? 200 : 3500);
+	const DELAY = (API.getUser().gRole >= API.GLOBAL_ROLE.AMBASSADOR ? 200 : 3500);
 	const CHAT_INTERCEPT_STRING = `Plug-It Socket Intercept: ${Math.random()}`;
 	const YT_API_KEY = 'AIzaSyC8pk0f57a_UcAIbHdrvRhsmHSG1KZk2SM';
 	const URL = require('../templates/links.js');
@@ -48,6 +47,7 @@ export default function init(Lang, Ranks, Modules, loadBox) {
 			pi.init = undefined;
 		},
 		kill: () => {
+			require('./extend-api').destory()
 			$('#pi-menu-css').remove();
 			pi.menu.kill();
 
